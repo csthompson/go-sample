@@ -35,9 +35,6 @@ var REDIS_CONNECTION = redis.NewClient(&redis.Options{
 //List to dump data into 
 var REDIS_LIST = "NEWS_XML"
 
-//List to check unique data (provide idempotent requirement)
-var REDIS_UNIQUE = "NEWS_XML_HASH"
-
 //A buffer containing the XML news posts as instances of bytes.Buffer (shared queue concurrency model)
 var ContentQueue = make(chan File, 100)
 //A buffer containing the zip folders in reader type
