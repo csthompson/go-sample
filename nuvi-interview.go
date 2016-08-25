@@ -1,3 +1,14 @@
+/* Author: Cooper Thompson
+   Project: NUVI Interview - XML Data Script
+
+   Description: The below applciation will download zip files from an HTTP directory, extract the XML files from each, and insert them into
+   a Redis List. The application will verify uniquness using the filename checked against Redis keys. By using a "shared queue" concurrency model,
+   and separating out the workload across multiple anonymous functions, the application is able to execute multiple componenets concurrently to speed
+   up the data processing. Semaphores are used to limit the number of concurrent threads (go routines) within each step of the data processing workflow (file download, file extraction, database insertion).
+   these parameters can be changed based on the system the application will be running on.
+*/
+
+
 package main
 
 import (
