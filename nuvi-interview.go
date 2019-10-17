@@ -1,5 +1,5 @@
 /* Author: Cooper Thompson
-   Project: NUVI Interview - XML Data Script
+   Project: Sample Golang - XML Data Script
 
    Description: The below applciation will download zip files from an HTTP directory, extract the XML files from each, and insert them into
    a Redis List. The application will verify uniquness using the filename checked against Redis keys. By using a "shared queue" concurrency model,
